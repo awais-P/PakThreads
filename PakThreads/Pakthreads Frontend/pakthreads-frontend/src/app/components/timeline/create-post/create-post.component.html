@@ -1,0 +1,56 @@
+<div class="create-post-wrapper">
+  <div class="modal-header">
+    <h2>Create Post</h2>
+    <button class="close-btn" (click)="closeModal()">×</button>
+  </div>
+
+  <form [formGroup]="postForm" (ngSubmit)="submitPost()">
+    <input type="text" placeholder="Post title" formControlName="title" />
+
+    <select formControlName="postType">
+      <option value="" disabled selected>Select post type</option>
+      <option value="text">Text</option>
+      <option value="image/video">Image/Video</option>
+    </select>
+
+    <input 
+  type="text" 
+  placeholder="Add tags (press Enter)" 
+  (keydown.enter)="addTag($event)" 
+  [(ngModel)]="tagInput" 
+  [ngModelOptions]="{standalone: true}" />
+
+
+    <div class="tag-list">
+      <span class="tag" *ngFor="let tag of postTags; let i = index">
+        #{{ tag }}
+        <button (click)="removeTag(i)" type="button">×</button>
+      </span>
+    </div>
+
+    <!-- Conditional field -->
+    <textarea
+      *ngIf="postForm.get('postType')?.value === 'text'"
+      formControlName="contentUrl"
+      placeholder="Write your post..."
+    ></textarea>
+
+    <div 
+        *ngIf="postForm.get('postType')?.value === 'image/video'"
+        class="upload-box"
+        (click)="fileInput.click()"
+        >
+        <span>{{ selectedFileName || 'Click to upload image/video (max 2MB)' }}</span>
+        <input 
+            type="file" 
+            #fileInput 
+            style="display: none" 
+            (change)="handleFileUpload($event)"
+            accept="image/*,video/*"
+        />
+    </div>
+
+
+    <button type="submit" class="submit-btn">Post</button>
+  </form>
+</div>

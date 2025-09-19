@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="assets/images/logo.png" alt="PakThreads Logo" class="site-logo" />
+    <!-- <span class="brand">PakThreads</span> -->
+    <a class="nav-link" routerLink="/timeline/home-page">Home</a>
+    <a class="nav-link" routerLink="/account/about">About</a>
+  </div>
+
+  <div class="navbar-center">
+    <div class="search-container">
+      <input type="text"
+             [(ngModel)]="searchText"
+             (keydown.enter)="onSearch()"
+             placeholder="Search posts..."
+             class="search-bar" />
+      <button class="clear-btn" *ngIf="searchText" (click)="clearSearch()">×</button>
+    </div>
+  </div>
+
+  <div class="navbar-right" *ngIf="user">
+    <span class="username">{{ user.userName }}</span>
+    <img class="profile-avatar" [src]="user.profileImageUrl || defaultImg" alt="profile"
+         (click)="goToProfile()" />    
+  </div>
+</nav>

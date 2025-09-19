@@ -1,0 +1,129 @@
+.create-post-wrapper {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 4rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.modal-header {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+input[type='text'],
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input[type='text']::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: #3a3a3a;
+  color: #f1f1f1;
+  border-radius: 16px;
+  padding: 0.3rem 0.8rem;
+  margin: 0.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.tag button {
+  background: transparent;
+  border: none;
+  color: #ff5555;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #00796b;
+}
+
+
+.upload-box {
+  background-color: #2a2a2a;
+  color: #ccc;
+  border: 2px dashed #444;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #009688;
+  color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+.modal-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #f5f5f5;
+  letter-spacing: 0.8px;
+  text-shadow: 1px 1px 2px #000;
+}

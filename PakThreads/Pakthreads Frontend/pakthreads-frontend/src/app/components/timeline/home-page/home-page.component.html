@@ -1,0 +1,120 @@
+<div class="home-container">
+ <aside class="sidebar">
+  <!-- Main Nav -->
+  <div class="sidebar-section">
+    <button class="sidebar-btn">Home</button>
+    <button class="sidebar-btn">Popular</button>
+  </div>
+
+  <!-- Tag Search + Filter -->
+  <div class="sidebar-section">
+    <h4>Filter by Tags</h4>
+    <input
+      type="text"
+      [(ngModel)]="customTag"
+      class="tag-search"
+      placeholder="Search tags..."
+    />
+
+    <div class="tag-list">
+      <button
+        *ngFor="let tag of majorTags | filter: tagSearch"
+        class="tag-btn"
+        [class.selected]="selectedTag === tag"
+        (click)="selectTag(tag)"
+      >
+        #{{ tag }}
+      </button>
+    </div>
+
+    <div class="filter-actions">
+      <button class="filter-btn" (click)="applyFilter()">Filter</button>
+      <button class="clear-btn" *ngIf="filterApplied" (click)="clearFilter()">❌</button>
+    </div>
+  
+
+    
+  </div>
+
+</aside>
+
+
+
+
+
+  
+  <main class="feed-container">
+ <div class="top-bar">
+  <button class="action-btn create-btn" (click)="showCreatePost = true">Create Post</button>
+  <button class="action-btn your-posts-btn" [class.active]="viewingUserPosts" (click)="loadUserPosts()">Your Posts</button>
+</div>
+
+
+
+  <div *ngIf="noResults" class="no-results">No results found.</div>
+   <div class="feed">
+      <div class="post-card" *ngFor="let post of posts">
+        <div class="post-header">
+          <a [routerLink]="['/account/profile', post.userName]" class="avatar-link">
+            <img class="avatar" [src]="post.profileImageUrl || defaultImg" alt="icon"
+              (error)="onImgError($event)"/> </a>
+          <a [routerLink]="['/account/profile', post.userName]" class="username-link">
+            <span class="subreddit">- {{ post.userName }}</span>
+          </a>
+          <span class="time">{{ timeSince(post.addedDate) }}</span>
+        </div>
+
+        <div class="post-title" [innerHTML]="post.title | highlight:searchText"></div>
+
+
+        <div *ngIf="post.postType === 'text'" class="post-content-text">
+          {{ post.contentUrl }}
+        </div>
+
+        <div *ngIf="post.postType === 'image/video'" class="post-image">
+          <img [src]="post.contentUrl || defaultImg" (error)="onImgError($event)" alt="Post image" />
+        </div>
+
+        <div class="post-actions">
+          <button (click)="vote(post, 'up')" [class.active]="post.userVote === 'up'" title="Upvote" class="action-btn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L4 14h5v8h6v-8h5z" />
+            </svg>
+            <span>{{ post.upvotes }}</span>
+          </button>
+
+          <button (click)="vote(post, 'down')" [class.active]="post.userVote === 'down'" title="Downvote" class="action-btn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 22l8-12h-5V2H9v8H4z" />
+            </svg>
+            <span>{{ post.downvotes }}</span>
+          </button>
+
+          <button title="Comments" class="action-btn">
+            <svg width="20" height="20" fill="#616161" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v16l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>
+            <span>0</span>
+          </button>
+
+          <button (click)="copyShareLink(post.id)" title="Share" class="action-btn">
+            <svg width="20" height="20" fill="#009688" viewBox="0 0 24 24">
+            <path d="M18 16.08C17.24 16.08 16.56 16.38 16.03 16.88L8.91 12.7C8.96 12.47 9 12.24 9 12s-.04-.47-.09-.7l7.02-4.17A2.98 2.98 0 0018 7.92c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.07 9.87A2.98 2.98 0 006 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.74 0 1.41-.27 1.93-.72l7.13 4.2c-.05.2-.06.4-.06.61 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"/></svg>
+            <span>Share</span>
+          </button>
+        </div>
+
+
+        <!-- TAGS (optional) -->
+        <div class="tags" *ngIf="post.postTagsVms?.length">
+          <span class="tag" *ngFor="let tag of post.postTagsVms">#{{ tag.tagName }}</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" *ngIf="showCreatePost">
+  <div class="modal">
+    <button class="btn btn-close" (click)="showCreatePost = false">×</button>
+    <app-create-post (close)="showCreatePost = false"></app-create-post>
+  </div>
+</div>

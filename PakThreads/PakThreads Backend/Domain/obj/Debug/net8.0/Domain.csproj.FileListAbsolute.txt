@@ -1,0 +1,12 @@
+D:\repos\PakThreads\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\repos\PakThreads\Domain\bin\Debug\net8.0\Domain.dll
+D:\repos\PakThreads\Domain\bin\Debug\net8.0\Domain.pdb
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\Domain.dll
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\Domain.pdb
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\repos\PakThreads\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache

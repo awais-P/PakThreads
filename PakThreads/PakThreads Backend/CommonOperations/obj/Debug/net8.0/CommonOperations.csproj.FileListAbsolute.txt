@@ -1,0 +1,17 @@
+D:\repos\PakThreads\CommonOperations\bin\Debug\net8.0\CommonOperations.deps.json
+D:\repos\PakThreads\CommonOperations\bin\Debug\net8.0\CommonOperations.dll
+D:\repos\PakThreads\CommonOperations\bin\Debug\net8.0\CommonOperations.pdb
+D:\repos\PakThreads\CommonOperations\bin\Debug\net8.0\Application.dll
+D:\repos\PakThreads\CommonOperations\bin\Debug\net8.0\Domain.dll
+D:\repos\PakThreads\CommonOperations\bin\Debug\net8.0\Application.pdb
+D:\repos\PakThreads\CommonOperations\bin\Debug\net8.0\Domain.pdb
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOperations.csproj.AssemblyReference.cache
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOperations.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOperations.AssemblyInfoInputs.cache
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOperations.AssemblyInfo.cs
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOperations.csproj.CoreCompileInputs.cache
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOp.946E8233.Up2Date
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOperations.dll
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\refint\CommonOperations.dll
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\CommonOperations.pdb
+D:\repos\PakThreads\CommonOperations\obj\Debug\net8.0\ref\CommonOperations.dll

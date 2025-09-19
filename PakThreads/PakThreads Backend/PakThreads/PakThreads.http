@@ -1,0 +1,6 @@
+@PakThreads_HostAddress = http://localhost:5142
+
+GET {{PakThreads_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

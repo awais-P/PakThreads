@@ -1,0 +1,51 @@
+<div class="profile-container">
+  <h1 class="profile-heading">Your Profile</h1>
+
+  <!-- Profile Avatar -->
+  <div class="avatar-section">
+    <label for="profileUpload" class="avatar-wrapper">
+      <img
+        [src]="user?.profileImageUrl || defaultImg"
+        alt="Profile Picture"
+        class="profile-img"
+      />
+      <div class="overlay">📤</div>
+    </label>
+    <input
+      type="file"
+      id="profileUpload"
+      (change)="uploadProfileImage($event)"
+      accept="image/*"
+      hidden
+    />
+    <p class="username">{{ '@' + (user?.userName || '') }}</p>
+  </div>
+
+  <!-- Editable Form -->
+  <form [formGroup]="profileForm" (ngSubmit)="saveProfile()" class="profile-form">
+    <div class="form-row">
+      <input formControlName="firstName" placeholder="First Name" />
+      <input formControlName="lastName" placeholder="Last Name" />
+    </div>
+
+    <div class="form-row">
+      <select formControlName="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input type="date" formControlName="dateOfBirth" />
+    </div>
+
+    <div class="form-row">
+      <input formControlName="phoneNumber" placeholder="Phone Number" />
+      <input formControlName="country" placeholder="Country" />
+    </div>
+
+    <textarea formControlName="userBio" placeholder="Write something about yourself..." rows="4"></textarea>
+
+    <button type="submit" class="save-btn">Save Profile</button>
+  </form>
+</div>
