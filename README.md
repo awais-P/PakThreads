@@ -3,6 +3,7 @@ User authentication & authorization (JWT-based).
 RESTful APIs built with ASP.NET Core.
 Angular frontend for responsive UI.
 SSMS Integration.
+CLEAN Architecture.
 
 PakThreads/
 │── Pakthreads Frontend/
